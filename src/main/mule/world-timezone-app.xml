@@ -15,6 +15,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:request method="GET" doc:name="Request" doc:id="29eaad0e-f363-445d-9d38-460cc0dc3592" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
+
 {
 	city : attributes.uriParams.city,
 	region : attributes.uriParams.region

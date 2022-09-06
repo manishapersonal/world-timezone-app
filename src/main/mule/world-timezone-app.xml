@@ -12,6 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:request-config>
 	<flow name="world-timezone-appFlow" doc:id="e47f8bc3-dfc1-4291-a5c7-6f6c8999b3ea" >
 		<http:listener doc:name="GET:/{region}/{city}" doc:id="b3340e65-0c1d-443d-b697-adea65e43187" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2662c26e-1e63-43ad-88ff-979e8b41b0b3" message="ENTRY: #[flow.name]"/>
 		<http:request method="GET" doc:name="Request" doc:id="29eaad0e-f363-445d-9d38-460cc0dc3592" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
@@ -21,5 +22,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	region : attributes.uriParams.region
 }]]]></http:uri-params>
 		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="cbb49cf6-c345-43ba-a570-b5a972f317c0" message="ENTRY: #[flow.name]"/>
 	</flow>
 </mule>
